@@ -16,7 +16,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 import json
 
 # load task1 test dataset
-with open('Tesk1_test_dataset_example.json', 'r') as file:
+with open('Task1_test_dataset_example.json', 'r') as file:
     simple_data = json.load(file)
 
 simple_val_input = simple_data[9]["Prompt"]
