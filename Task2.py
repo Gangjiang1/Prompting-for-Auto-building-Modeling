@@ -16,7 +16,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 import json
 
 # load task2 test dataset
-with open('Tesk2_test_dataset_example.json', 'r') as file:
+with open('Task2_test_dataset_example.json', 'r') as file:
     complex_data = json.load(file)
 
 complex_val_input = complex_data[9]["Prompt"]
