@@ -77,7 +77,7 @@ complex_three_shot = [
 ### division task 2
 ### ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
-complex_chatting = [
+complex_division = [
     {"role": "user", "content": f"""Simulate a building that is 86.2 meters long, 57.0 meters wide, and 16.0 meters high. The window-to-wall ratio is 0.6, the window sill height is 3.2 meters, the window height is 12.8 meters, and the window jamb width is 0.1 meters. The occupancy rate is 7.3 m2/people, the lighting level is 28.0 W/m2, and the equipment power consumption is 7.0 W/m2."""},
     {"role": "assistant", "content": f"""This building have one floor, one roof, four walls, and four windows."""},
     {"role": "user", "content": f"""The floor's length is 86.2, width is 57.0, thus the details of floor is?"""},
@@ -673,7 +673,7 @@ ElectricEquipment,
 ### ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-complex_reasoning = [
+complex_explanation = [
     {"role": "user", "content": "Simulate a building that is 86.2 meters long, 57.0 meters wide, and 16.0 meters high. The window-to-wall ratio is 0.6, the window sill height is 3.2 meters, the window height is 12.8 meters, and the window jamb width is 0.1 meters. The occupancy rate is 7.3 m2/people, the lighting level is 28.0 W/m2, and the equipment power consumption is 7.0 W/m2."},
     {"role": "assistant", "content": f"""
 The building's long is 86.2 meters, wide is 57.0 meters and high is 16.0 meters.
@@ -1108,8 +1108,8 @@ complex_one_shot_prompt = tokenizer.apply_chat_template(complex_one_shot, tokeni
 complex_two_shot_prompt = tokenizer.apply_chat_template(complex_two_shot, tokenize=False, add_generation_prompt=True)
 complex_three_shot_prompt = tokenizer.apply_chat_template(complex_three_shot, tokenize=False, add_generation_prompt=True)
 
-complex_reasoning_prompt = tokenizer.apply_chat_template(complex_reasoning, tokenize=False, add_generation_prompt=True)
-complex_chatting_prompt = tokenizer.apply_chat_template(complex_chatting, tokenize=False, add_generation_prompt=True)
+complex_explanation_prompt = tokenizer.apply_chat_template(complex_explanation, tokenize=False, add_generation_prompt=True)
+complex_division_prompt = tokenizer.apply_chat_template(complex_division, tokenize=False, add_generation_prompt=True)
 
 ### inputs
 complex_zero_shot_prompt_inputs = tokenizer(complex_zero_shot_prompt, return_tensors="pt").to(model.device)
@@ -1117,8 +1117,8 @@ complex_one_shot_prompt_inputs = tokenizer(complex_one_shot_prompt, return_tenso
 complex_two_shot_prompt_inputs = tokenizer(complex_two_shot_prompt, return_tensors="pt").to(model.device)
 complex_three_shot_prompt_inputs = tokenizer(complex_three_shot_prompt, return_tensors="pt").to(model.device)
 
-complex_reasoning_prompt_inputs = tokenizer(complex_reasoning_prompt, return_tensors="pt").to(model.device)
-complex_chatting_prompt_inputs = tokenizer(complex_chatting_prompt, return_tensors="pt").to(model.device)
+complex_explanation_prompt_inputs = tokenizer(complex_explanation_prompt, return_tensors="pt").to(model.device)
+complex_division_prompt_inputs = tokenizer(complex_division_prompt, return_tensors="pt").to(model.device)
 
 # outputs = model.generate(**inputs, use_cache=True)
 complex_zero_shot_prompt_outputs = model.generate(**complex_zero_shot_prompt_inputs, use_cache=True, max_length=8192)
@@ -1126,8 +1126,8 @@ complex_one_shot_prompt_outputs = model.generate(**complex_one_shot_prompt_input
 complex_two_shot_prompt_outputs = model.generate(**complex_two_shot_prompt_inputs, use_cache=True, max_length=8192)
 complex_three_shot_prompt_outputs = model.generate(**complex_three_shot_prompt_inputs, use_cache=True, max_length=8192)
 
-complex_reasoning_prompt_outputs = model.generate(**complex_reasoning_prompt_inputs, use_cache=True, max_length=8192)
-complex_chatting_prompt_outputs = model.generate(**complex_chatting_prompt_inputs, use_cache=True, max_length=8192)
+complex_explanation_prompt_outputs = model.generate(**complex_explanation_prompt_inputs, use_cache=True, max_length=8192)
+complex_division_prompt_outputs = model.generate(**complex_division_prompt_inputs, use_cache=True, max_length=8192)
 
 # output text
 complex_zero_shot_prompt_output_text = tokenizer.decode(complex_zero_shot_prompt_outputs[0])
@@ -1135,8 +1135,8 @@ complex_one_shot_prompt_output_text = tokenizer.decode(complex_one_shot_prompt_o
 complex_two_shot_prompt_output_text = tokenizer.decode(complex_two_shot_prompt_outputs[0])
 complex_three_shot_prompt_output_text = tokenizer.decode(complex_three_shot_prompt_outputs[0])
 
-complex_reasoning_prompt_output_text = tokenizer.decode(complex_reasoning_prompt_outputs[0])
-complex_chatting_prompt_output_text = tokenizer.decode(complex_chatting_prompt_outputs[0])
+complex_explanation_prompt_output_text = tokenizer.decode(complex_explanation_prompt_outputs[0])
+complex_division_prompt_output_text = tokenizer.decode(complex_division_prompt_outputs[0])
 
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print("task2_zero_shot_prompt_output_text")
@@ -1161,10 +1161,10 @@ print("\n")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print("task2_explanation_prompt_output_text")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-print(complex_reasoning_prompt_output_text)
+print(complex_explanation_prompt_output_text)
 print("\n")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print("task2_division_prompt_output_text")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-print(complex_chatting_prompt_output_text)
+print(complex_division_prompt_output_text)
 print("\n")
