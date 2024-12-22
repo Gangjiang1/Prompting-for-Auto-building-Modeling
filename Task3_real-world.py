@@ -1386,10 +1386,10 @@ print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 print(real_three_shot_prompt_output_text)
 
 #============================================================================================
-### explanation
+### division
 #============================================================================================
 
-real_chat_shot = [
+real_division_shot = [
     {"role": "user", "content": """
 Simulate a building that is 20 meters long, 10 meters wide, and 3 meters high.
 There is a door on the south-west side. The door is 0.91 meters wide and 2.22 meters high, with its bottom-left corner positioned at (0,0.91) meters from the south-west corner of the building.
@@ -1808,11 +1808,11 @@ G01a 19mm gypsum board: 0.019 meters thick, with a conductivity of 0.16 W/m-K.
 """}
 ] 
 
-### explanation
-real_chat_shot_prompt = tokenizer.apply_chat_template(real_chat_shot, tokenize=False, add_generation_prompt=True)
-real_chat_shot_prompt_inputs = tokenizer(real_chat_shot_prompt, return_tensors="pt").to(model.device)
-real_chat_shot_prompt_outputs = model.generate(**real_chat_shot_prompt_inputs, use_cache=True, max_length=16000)
-real_chat_shot_prompt_output_text = tokenizer.decode(real_chat_shot_prompt_outputs[0])
+### division
+real_division_shot_prompt = tokenizer.apply_chat_template(real_division_shot, tokenize=False, add_generation_prompt=True)
+real_division_shot_prompt_inputs = tokenizer(real_division_shot_prompt, return_tensors="pt").to(model.device)
+real_division_shot_prompt_outputs = model.generate(**real_division_shot_prompt_inputs, use_cache=True, max_length=16000)
+real_division_shot_prompt_output_text = tokenizer.decode(real_division_shot_prompt_outputs[0])
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print("real_explanation")
@@ -1821,10 +1821,10 @@ print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 print(real_chat_shot_prompt_output_text)
 
 #============================================================================================
-### division
+### explanation
 #============================================================================================
 
-real_reason_shot = [
+real_explanation_shot = [
     {"role": "user", "content": """
 Simulate a building that is 20 meters long, 10 meters wide, and 3 meters high.
 There is a door on the south-west side. The door is 0.91 meters wide and 2.22 meters high, with its bottom-left corner positioned at (0,0.91) meters from the south-west corner of the building.
@@ -2186,14 +2186,14 @@ Let's think step by step.
 """}
 ] 
 
-### division
-real_reason_shot_prompt = tokenizer.apply_chat_template(real_reason_shot, tokenize=False, add_generation_prompt=True)
-real_reason_shot_prompt_inputs = tokenizer(real_reason_shot_prompt, return_tensors="pt").to(model.device)
-real_reason_shot_prompt_outputs = model.generate(**real_reason_shot_prompt_inputs, use_cache=True, max_length=10000)
-real_reason_shot_prompt_output_text = tokenizer.decode(real_reason_shot_prompt_outputs[0])
+### explanation
+real_explanation_shot_prompt = tokenizer.apply_chat_template(real_explanation_shot, tokenize=False, add_generation_prompt=True)
+real_explanation_shot_prompt_inputs = tokenizer(real_explanation_shot_prompt, return_tensors="pt").to(model.device)
+real_explanation_shot_prompt_outputs = model.generate(**real_explanation_shot_prompt_inputs, use_cache=True, max_length=10000)
+real_explanation_shot_prompt_output_text = tokenizer.decode(real_explanation_shot_prompt_outputs[0])
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print("real_division")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-print(real_reason_shot_prompt_output_text)
+print(real_explanation_shot_prompt_output_text)
