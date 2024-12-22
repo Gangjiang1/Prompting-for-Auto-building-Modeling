@@ -74,7 +74,7 @@ simple_three_shot = [
 ] 
 
 # explanation task 1
-simple_reasoning = [
+simple_explanation = [
     {"role": "user", "content": "Simulate a building that is 86.2 meters long, 57.0 meters wide, and 16.0 meters high. The window sill height is 3.2 meters, the window height is 12.8 meters, and the window jamb width is 0.1 meters. Let's think step by step."},
     {"role": "assistant", "content": f"""
 The building's long is 86.2 meters, wide is 57.0 meters and high is 16.0 meters.
@@ -356,7 +356,7 @@ FenestrationSurface:Detailed,
 ] 
 
 # division task 1
-simple_chatting = [
+simple_division = [
     {"role": "user", "content": f"""Simulate a building that is 86.2 meters long, 57.0 meters wide, and 16.0 meters high. The window sill height is 3.2 meters, the window height is 12.8 meters, and the window jamb width is 0.1 meters."""},
     {"role": "assistant", "content": f"""This building have one floor, one roof, four walls, and one window."""},
     {"role": "user", "content": f"""The floor's length is 86.2, width is 57.0, thus the details of floor is?"""},
@@ -731,8 +731,8 @@ simple_one_shot_prompt = tokenizer.apply_chat_template(simple_one_shot, tokenize
 simple_two_shot_prompt = tokenizer.apply_chat_template(simple_two_shot, tokenize=False, add_generation_prompt=True)
 simple_three_shot_prompt = tokenizer.apply_chat_template(simple_three_shot, tokenize=False, add_generation_prompt=True)
 
-simple_reasoning_prompt = tokenizer.apply_chat_template(simple_reasoning, tokenize=False, add_generation_prompt=True)
-simple_chatting_prompt = tokenizer.apply_chat_template(simple_chatting, tokenize=False, add_generation_prompt=True)
+simple_explanation_prompt = tokenizer.apply_chat_template(simple_explanation, tokenize=False, add_generation_prompt=True)
+simple_division_prompt = tokenizer.apply_chat_template(simple_division, tokenize=False, add_generation_prompt=True)
 
 ### inputs
 simple_zero_shot_prompt_inputs = tokenizer(simple_zero_shot_prompt, return_tensors="pt").to(model.device)
@@ -740,8 +740,8 @@ simple_one_shot_prompt_inputs = tokenizer(simple_one_shot_prompt, return_tensors
 simple_two_shot_prompt_inputs = tokenizer(simple_two_shot_prompt, return_tensors="pt").to(model.device)
 simple_three_shot_prompt_inputs = tokenizer(simple_three_shot_prompt, return_tensors="pt").to(model.device)
 
-simple_reasoning_prompt_inputs = tokenizer(simple_reasoning_prompt, return_tensors="pt").to(model.device)
-simple_chatting_prompt_inputs = tokenizer(simple_chatting_prompt, return_tensors="pt").to(model.device)
+simple_explanation_prompt_inputs = tokenizer(simple_explanation_prompt, return_tensors="pt").to(model.device)
+simple_division_prompt_inputs = tokenizer(simple_division_prompt, return_tensors="pt").to(model.device)
 
 # outputs = model.generate(**inputs, use_cache=True)
 simple_zero_shot_prompt_outputs = model.generate(**simple_zero_shot_prompt_inputs, use_cache=True, max_length=8192)
@@ -749,8 +749,8 @@ simple_one_shot_prompt_outputs = model.generate(**simple_one_shot_prompt_inputs,
 simple_two_shot_prompt_outputs = model.generate(**simple_two_shot_prompt_inputs, use_cache=True, max_length=8192)
 simple_three_shot_prompt_outputs = model.generate(**simple_three_shot_prompt_inputs, use_cache=True, max_length=8192)
 
-simple_reasoning_prompt_outputs = model.generate(**simple_reasoning_prompt_inputs, use_cache=True, max_length=8192)
-simple_chatting_prompt_outputs = model.generate(**simple_chatting_prompt_inputs, use_cache=True, max_length=8192)
+simple_explanation_prompt_outputs = model.generate(**simple_explanation_prompt_inputs, use_cache=True, max_length=8192)
+simple_division_prompt_outputs = model.generate(**simple_division_prompt_inputs, use_cache=True, max_length=8192)
 
 # output text
 simple_zero_shot_prompt_output_text = tokenizer.decode(simple_zero_shot_prompt_outputs[0])
@@ -758,8 +758,8 @@ simple_one_shot_prompt_output_text = tokenizer.decode(simple_one_shot_prompt_out
 simple_two_shot_prompt_output_text = tokenizer.decode(simple_two_shot_prompt_outputs[0])
 simple_three_shot_prompt_output_text = tokenizer.decode(simple_three_shot_prompt_outputs[0])
 
-simple_reasoning_prompt_output_text = tokenizer.decode(simple_reasoning_prompt_outputs[0])
-simple_chatting_prompt_output_text = tokenizer.decode(simple_chatting_prompt_outputs[0])
+simple_explanation_prompt_output_text = tokenizer.decode(simple_explanation_prompt_outputs[0])
+simple_division_prompt_output_text = tokenizer.decode(simple_division_prompt_outputs[0])
 
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print("task1_zero_shot_prompt_output_text")
