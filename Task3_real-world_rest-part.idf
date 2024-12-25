@@ -1,0 +1,1615 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Replace this part with the generation form prompt engineering!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+BuildingSurface:Detailed,
+  Face 0,
+  Floor,
+  Floor,
+  Thermal Zone 1,
+  ,
+  Ground,
+  ,
+  NoSun,
+  NoWind,
+  ,
+  ,
+  0, 0, 0,
+  0, 10, 0,
+  20, 10, 0,
+  20, 0, 0;
+
+BuildingSurface:Detailed,
+  Face 1,
+  Roof,
+  Roof,
+  Thermal Zone 1,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  ,
+  20, 0, 3,
+  20, 10, 3,
+  0, 10, 3,
+  0, 0, 3;
+
+BuildingSurface:Detailed,
+  Face 2,
+  Wall,
+  Exterior Wall,
+  Thermal Zone 1,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  ,
+  0, 0, 3,
+  0, 10, 3,
+  0, 10, 0,
+  0, 0, 0;
+
+FenestrationSurface:Detailed,
+  Face 3,
+  Door,
+  Door,
+  Face 2,
+  ,
+  ,
+  ,
+  ,
+  ,
+  0, 0.91, 2.22,
+  0, 0.91, 0,
+  0, 0, 0,
+  0, 0, 2.22;
+
+BuildingSurface:Detailed,
+  Face 4,
+  Wall,
+  Exterior Wall,
+  Thermal Zone 1,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  ,
+  0, 10, 3,
+  20, 10, 3,
+  20, 10, 0,
+  0, 10, 0;
+
+BuildingSurface:Detailed,
+  Face 5,
+  Wall,
+  Exterior Wall,
+  Thermal Zone 1,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  ,
+  20, 10, 3,
+  20, 0, 3,
+  20, 0, 0,
+  20, 10, 0;
+
+FenestrationSurface:Detailed,
+  Face 6,
+  Window,
+  Window,
+  Face 5,
+  ,
+  ,
+  ,
+  ,
+  ,
+  20, 3.63, 2.41,
+  20, 3.63, 0.91,
+  20, 6.37, 0.91,
+  20, 6.37, 2.41;
+
+BuildingSurface:Detailed,
+  Face 7,
+  Wall,
+  Exterior Wall,
+  Thermal Zone 1,
+  ,
+  Outdoors,
+  ,
+  SunExposed,
+  WindExposed,
+  ,
+  ,
+  20, 0, 3,
+  0, 0, 3,
+  0, 0, 0,
+  20, 0, 0;
+
+Schedule:Day:Interval,Zone1 HtgSetp Default Schedule,Temperature 11,No,24:00,24.0;
+
+Schedule:Day:Interval,Zone1 ClgSetp Default Schedule,Temperature 4,No,24:00,26.0;
+
+Material,Drywall,MediumSmooth,0.015875,0.160251607317104,799.962060895569,1089.991512,0.9,0.7,0.7;
+
+Material,EPDM Rubber,Smooth,0.00254,0.200318114843602,1009.16319255949,2009.664,0.9,0.3,0.7;
+
+Material,Exterior Finish OSB,Smooth,0.015875,0.119189927357443,543.987016179686,1209.9852,0.9,0.5,0.7;
+
+Material,G01a 19mm gypsum board,MediumSmooth,0.019,0.16,800,1090,0.9,0.4,0.4;
+
+Material,Insulated Joist,Smooth,0.3673348,0.0479269274696011,101.492983937411,986.82876,0.9,0.7,0.7;
+
+Material,Insulted Truss,Smooth,0.949325,0.0493980519360168,52.7968552805726,795.492,0.9,0.7,0.7;
+
+Material,OSB,Smooth,0.0127,0.119189927357443,543.987016179686,1209.9852,0.9,0.7,0.7;
+
+Material,Plywood,Smooth,0.00635,0.115382311091426,543.987016179686,1209.9852,0.9,0.7,0.7;
+
+Material,Rigid Insulation,Smooth,0.0254,0.0288455777728565,36.4996706439056,1498.8744,0.9,0.7,0.7;
+
+Material,Roddent Barrier,Smooth,0.00127,0.500759230136789,949.894878075836,1820.00196,0.9,0.7,0.7;
+
+Material,Stud Layer,Smooth,0.1397,0.0422155030705755,120.795232303033,1077.26364,0.9,0.7,0.7;
+
+WindowMaterial:SimpleGlazingSystem,Window Material Simple Glazing System 1,1.5,0.3,0.42;
+
+Schedule:Day:Interval,Activity Default Schedule,ActivityLevel,No,24:00,120;
+
+Schedule:Day:Interval,Schedule Friday,Fractional,No,08:00,0,16:00,0.8,24:00,0;
+
+Schedule:Day:Interval,Schedule Monday-Thursday,Fractional,No,08:00,0,17:00,0.6,24:00,0;
+
+Schedule:Day:Interval,Schedule Saturday-Sunday,Fractional,No,24:00,0.2;
+
+Lights,Lights 1,Space Type 1,Schedule Ruleset,Watts/Area,,8.0,,,,,1,General;
+
+People,People 1,Space Type 1,Schedule Ruleset,People,5,,,0.3,,People Activity;
+
+ElectricEquipment,Electric Equipment 1,Space Type 1,Schedule Ruleset,Watts/Area,,10.0,,,,,General;
+
+ZoneInfiltration:DesignFlowRate,Infiltration Setting,Space Type 1,Infil Quarter On,AirChanges/Hour,,,,2,0.03,0.003,0,;
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! The rest part of IDF file !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+Version,
+  9.6;                                    !- Version Identifier
+
+Material,
+  I01 25mm insulation board,              !- Name
+  MediumRough,                            !- Roughness
+  0.0254,                                 !- Thickness {m}
+  0.03,                                   !- Conductivity {W/m-K}
+  43,                                     !- Density {kg/m3}
+  1210,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.6,                                    !- Solar Absorptance
+  0.6;                                    !- Visible Absorptance
+
+Material,
+  F08 Metal surface,                      !- Name
+  Smooth,                                 !- Roughness
+  0.0008,                                 !- Thickness {m}
+  45.2800000000001,                       !- Conductivity {W/m-K}
+  7823.99999999999,                       !- Density {kg/m3}
+  500,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+Timestep,
+  6;                                      !- Number of Timesteps per Hour
+
+LifeCycleCost:Parameters,
+  Life Cycle Cost Parameters,             !- Name
+  EndOfYear,                              !- Discounting Convention
+  ConstantDollar,                         !- Inflation Approach
+  0.03,                                   !- Real Discount Rate
+  ,                                       !- Nominal Discount Rate
+  ,                                       !- Inflation
+  ,                                       !- Base Date Month
+  2011,                                   !- Base Date Year
+  ,                                       !- Service Date Month
+  2011,                                   !- Service Date Year
+  25,                                     !- Length of Study Period in Years
+  ,                                       !- Tax rate
+  None;                                   !- Depreciation Method
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Electricity,       !- Name
+  Electricity,                            !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9838,                                 !- Year Escalation 1
+  0.9730,                                 !- Year Escalation 2
+  0.9632,                                 !- Year Escalation 3
+  0.9611,                                 !- Year Escalation 4
+  0.9571,                                 !- Year Escalation 5
+  0.9553,                                 !- Year Escalation 6
+  0.9539,                                 !- Year Escalation 7
+  0.9521,                                 !- Year Escalation 8
+  0.9546,                                 !- Year Escalation 9
+  0.9550,                                 !- Year Escalation 10
+  0.9553,                                 !- Year Escalation 11
+  0.9564,                                 !- Year Escalation 12
+  0.9575,                                 !- Year Escalation 13
+  0.9596,                                 !- Year Escalation 14
+  0.9618,                                 !- Year Escalation 15
+  0.9614,                                 !- Year Escalation 16
+  0.9618,                                 !- Year Escalation 17
+  0.9618,                                 !- Year Escalation 18
+  0.9593,                                 !- Year Escalation 19
+  0.9589,                                 !- Year Escalation 20
+  0.9607,                                 !- Year Escalation 21
+  0.9625,                                 !- Year Escalation 22
+  0.9650,                                 !- Year Escalation 23
+  0.9708,                                 !- Year Escalation 24
+  0.9751,                                 !- Year Escalation 25
+  0.9762,                                 !- Year Escalation 26
+  0.9766,                                 !- Year Escalation 27
+  0.9766,                                 !- Year Escalation 28
+  0.9769,                                 !- Year Escalation 29
+  0.9773;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Distillate Oil,    !- Name
+  FuelOilNo1,                             !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9714,                                 !- Year Escalation 1
+  0.9730,                                 !- Year Escalation 2
+  0.9942,                                 !- Year Escalation 3
+  1.0164,                                 !- Year Escalation 4
+  1.0541,                                 !- Year Escalation 5
+  1.0928,                                 !- Year Escalation 6
+  1.1267,                                 !- Year Escalation 7
+  1.1580,                                 !- Year Escalation 8
+  1.1792,                                 !- Year Escalation 9
+  1.1967,                                 !- Year Escalation 10
+  1.2200,                                 !- Year Escalation 11
+  1.2333,                                 !- Year Escalation 12
+  1.2566,                                 !- Year Escalation 13
+  1.2709,                                 !- Year Escalation 14
+  1.2826,                                 !- Year Escalation 15
+  1.2985,                                 !- Year Escalation 16
+  1.3102,                                 !- Year Escalation 17
+  1.3250,                                 !- Year Escalation 18
+  1.3261,                                 !- Year Escalation 19
+  1.3282,                                 !- Year Escalation 20
+  1.3324,                                 !- Year Escalation 21
+  1.3356,                                 !- Year Escalation 22
+  1.3431,                                 !- Year Escalation 23
+  1.3510,                                 !- Year Escalation 24
+  1.3568,                                 !- Year Escalation 25
+  1.3606,                                 !- Year Escalation 26
+  1.3637,                                 !- Year Escalation 27
+  1.3674,                                 !- Year Escalation 28
+  1.3706,                                 !- Year Escalation 29
+  1.3743;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Residual Oil,      !- Name
+  FuelOilNo2,                             !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.8469,                                 !- Year Escalation 1
+  0.8257,                                 !- Year Escalation 2
+  0.8681,                                 !- Year Escalation 3
+  0.8988,                                 !- Year Escalation 4
+  0.9289,                                 !- Year Escalation 5
+  0.9604,                                 !- Year Escalation 6
+  0.9897,                                 !- Year Escalation 7
+  1.0075,                                 !- Year Escalation 8
+  1.0314,                                 !- Year Escalation 9
+  1.0554,                                 !- Year Escalation 10
+  1.0861,                                 !- Year Escalation 11
+  1.1278,                                 !- Year Escalation 12
+  1.1497,                                 !- Year Escalation 13
+  1.1620,                                 !- Year Escalation 14
+  1.1743,                                 !- Year Escalation 15
+  1.1852,                                 !- Year Escalation 16
+  1.1948,                                 !- Year Escalation 17
+  1.2037,                                 !- Year Escalation 18
+  1.2071,                                 !- Year Escalation 19
+  1.2119,                                 !- Year Escalation 20
+  1.2139,                                 !- Year Escalation 21
+  1.2194,                                 !- Year Escalation 22
+  1.2276,                                 !- Year Escalation 23
+  1.2365,                                 !- Year Escalation 24
+  1.2420,                                 !- Year Escalation 25
+  1.2461,                                 !- Year Escalation 26
+  1.2509,                                 !- Year Escalation 27
+  1.2550,                                 !- Year Escalation 28
+  1.2591,                                 !- Year Escalation 29
+  1.2638;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Natural gas,       !- Name
+  NaturalGas,                             !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9823,                                 !- Year Escalation 1
+  0.9557,                                 !- Year Escalation 2
+  0.9279,                                 !- Year Escalation 3
+  0.9257,                                 !- Year Escalation 4
+  0.9346,                                 !- Year Escalation 5
+  0.9412,                                 !- Year Escalation 6
+  0.9512,                                 !- Year Escalation 7
+  0.9645,                                 !- Year Escalation 8
+  0.9856,                                 !- Year Escalation 9
+  1.0067,                                 !- Year Escalation 10
+  1.0222,                                 !- Year Escalation 11
+  1.0410,                                 !- Year Escalation 12
+  1.0610,                                 !- Year Escalation 13
+  1.0787,                                 !- Year Escalation 14
+  1.0942,                                 !- Year Escalation 15
+  1.1098,                                 !- Year Escalation 16
+  1.1220,                                 !- Year Escalation 17
+  1.1308,                                 !- Year Escalation 18
+  1.1386,                                 !- Year Escalation 19
+  1.1486,                                 !- Year Escalation 20
+  1.1619,                                 !- Year Escalation 21
+  1.1763,                                 !- Year Escalation 22
+  1.1918,                                 !- Year Escalation 23
+  1.2118,                                 !- Year Escalation 24
+  1.2284,                                 !- Year Escalation 25
+  1.2439,                                 !- Year Escalation 26
+  1.2605,                                 !- Year Escalation 27
+  1.2772,                                 !- Year Escalation 28
+  1.2938,                                 !- Year Escalation 29
+  1.3115;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Coal,              !- Name
+  Coal,                                   !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9970,                                 !- Year Escalation 1
+  1.0089,                                 !- Year Escalation 2
+  1.0089,                                 !- Year Escalation 3
+  0.9941,                                 !- Year Escalation 4
+  0.9941,                                 !- Year Escalation 5
+  1.0000,                                 !- Year Escalation 6
+  1.0030,                                 !- Year Escalation 7
+  1.0059,                                 !- Year Escalation 8
+  1.0089,                                 !- Year Escalation 9
+  1.0119,                                 !- Year Escalation 10
+  1.0148,                                 !- Year Escalation 11
+  1.0178,                                 !- Year Escalation 12
+  1.0208,                                 !- Year Escalation 13
+  1.0267,                                 !- Year Escalation 14
+  1.0297,                                 !- Year Escalation 15
+  1.0356,                                 !- Year Escalation 16
+  1.0415,                                 !- Year Escalation 17
+  1.0534,                                 !- Year Escalation 18
+  1.0564,                                 !- Year Escalation 19
+  1.0593,                                 !- Year Escalation 20
+  1.0653,                                 !- Year Escalation 21
+  1.0712,                                 !- Year Escalation 22
+  1.0742,                                 !- Year Escalation 23
+  1.0801,                                 !- Year Escalation 24
+  1.0831,                                 !- Year Escalation 25
+  1.0831,                                 !- Year Escalation 26
+  1.0861,                                 !- Year Escalation 27
+  1.0890,                                 !- Year Escalation 28
+  1.0920,                                 !- Year Escalation 29
+  1.0950;                                 !- Year Escalation 30
+
+Building,
+  Building,                               !- Name
+  -0,                                     !- North Axis {deg}
+  ,                                       !- Terrain
+  ,                                       !- Loads Convergence Tolerance Value {W}
+  ,                                       !- Temperature Convergence Tolerance Value {deltaC}
+  ,                                       !- Solar Distribution
+  ,                                       !- Maximum Number of Warmup Days
+  ;                                       !- Minimum Number of Warmup Days
+
+Zone,
+  Thermal Zone 1,                         !- Name
+  0,                                      !- Direction of Relative North {deg}
+  0,                                      !- X Origin {m}
+  0,                                      !- Y Origin {m}
+  0,                                      !- Z Origin {m}
+  ,                                       !- Type
+  1,                                      !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  ,                                       !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  Yes;                                    !- Part of Total Floor Area
+
+ZoneControl:Thermostat,
+  Thermal Zone 1 Thermostat,              !- Name
+  Thermal Zone 1,                         !- Zone or ZoneList Name
+  Thermal Zone 1 Thermostat Schedule,     !- Control Type Schedule Name
+  ThermostatSetpoint:DualSetpoint,        !- Control 1 Object Type
+  Thermostat Setpoint Dual Setpoint 1,    !- Control 1 Name
+  ,                                       !- Control 2 Object Type
+  ,                                       !- Control 2 Name
+  ,                                       !- Control 3 Object Type
+  ,                                       !- Control 3 Name
+  ,                                       !- Control 4 Object Type
+  ,                                       !- Control 4 Name
+  0;                                      !- Temperature Difference Between Cutout And Setpoint {deltaC}
+
+Schedule:Compact,
+  Thermal Zone 1 Thermostat Schedule,     !- Name
+  Thermal Zone 1 Thermostat Schedule Type Limits, !- Schedule Type Limits Name
+  Through: 12/31,                         !- Field 1
+  For: AllDays,                           !- Field 2
+  Until: 24:00,                           !- Field 3
+  4;                                      !- Field 4
+
+ScheduleTypeLimits,
+  Thermal Zone 1 Thermostat Schedule Type Limits, !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  4,                                      !- Upper Limit Value {BasedOnField A3}
+  DISCRETE;                               !- Numeric Type
+
+ThermostatSetpoint:DualSetpoint,
+  Thermostat Setpoint Dual Setpoint 1,    !- Name
+  Zone 1 HtgSetp,                         !- Heating Setpoint Temperature Schedule Name
+  Zone 1 ClgSetp;                         !- Cooling Setpoint Temperature Schedule Name
+
+ScheduleTypeLimits,
+  Temperature 11,                         !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+
+
+Schedule:Week:Daily,
+  Zone 1 HtgSetp Week Rule - Jan1-Dec31,  !- Name
+  Zone1 HtgSetp Default Schedule,         !- Sunday Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- Monday Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- Tuesday Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- Wednesday Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- Thursday Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- Friday Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- Saturday Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- Holiday Schedule:Day Name
+  Small Office HtgSetp Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  Small Office HtgSetp Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  Zone1 HtgSetp Default Schedule,         !- CustomDay1 Schedule:Day Name
+  Zone1 HtgSetp Default Schedule;         !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  Zone 1 HtgSetp,                         !- Name
+  Temperature 11,                         !- Schedule Type Limits Name
+  Zone 1 HtgSetp Week Rule - Jan1-Dec31,  !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Day:Interval,
+  Small Office HtgSetp Summer Design Day, !- Name
+  Temperature 11,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  15.6;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Small Office HtgSetp Winter Design Day, !- Name
+  Temperature 11,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  21;                                     !- Value Until Time 1
+
+ScheduleTypeLimits,
+  Temperature 4,                          !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+
+Schedule:Week:Daily,
+  Zone 1 ClgSetp Week Rule - Jan1-Dec31,  !- Name
+  Zone1 ClgSetp Default Schedule,         !- Sunday Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- Monday Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- Tuesday Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- Wednesday Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- Thursday Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- Friday Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- Saturday Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- Holiday Schedule:Day Name
+  Small Office ClgSetp Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  Small Office ClgSetp Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  Zone1 ClgSetp Default Schedule,         !- CustomDay1 Schedule:Day Name
+  Zone1 ClgSetp Default Schedule;         !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  Zone 1 ClgSetp,                         !- Name
+  Temperature 4,                          !- Schedule Type Limits Name
+  Zone 1 ClgSetp Week Rule - Jan1-Dec31,  !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Day:Interval,
+  Small Office ClgSetp Summer Design Day, !- Name
+  Temperature 4,                          !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  06:00,                                  !- Time 1 {hh:mm}
+  26.7,                                   !- Value Until Time 1
+  22:00,                                  !- Time 2 {hh:mm}
+  24,                                     !- Value Until Time 2
+  24:00,                                  !- Time 3 {hh:mm}
+  26.7;                                   !- Value Until Time 3
+
+Schedule:Day:Interval,
+  Small Office ClgSetp Winter Design Day, !- Name
+  Temperature 4,                          !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  26.7;                                   !- Value Until Time 1
+! 
+! HVACTemplate:Zone:IdealLoadsAirSystem,
+!   Thermal Zone 1,                         !- Zone Name
+!   ,                                       !- Template Thermostat Name
+!   ,                                       !- System Availability Schedule Name
+!   ,                                       !- Maximum Heating Supply Air Temperature {C}
+!   ,                                       !- Minimum Cooling Supply Air Temperature {C}
+!   ,                                       !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+!   ,                                       !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+!   ,                                       !- Heating Limit
+!   ,                                       !- Maximum Heating Air Flow Rate {m3/s}
+!   ,                                       !- Maximum Sensible Heating Capacity {W}
+!   ,                                       !- Cooling Limit
+!   ,                                       !- Maximum Cooling Air Flow Rate {m3/s}
+!   ,                                       !- Maximum Total Cooling Capacity {W}
+!   ,                                       !- Heating Availability Schedule Name
+!   ,                                       !- Cooling Availability Schedule Name
+!   ,                                       !- Dehumidification Control Type
+!   ,                                       !- Cooling Sensible Heat Ratio {dimensionless}
+!   ,                                       !- Dehumidification Setpoint {percent}
+!   ,                                       !- Humidification Control Type
+!   ,                                       !- Humidification Setpoint {percent}
+!   ,                                       !- Outdoor Air Method
+!   ,                                       !- Outdoor Air Flow Rate per Person {m3/s}
+!   ,                                       !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+!   ,                                       !- Outdoor Air Flow Rate per Zone {m3/s}
+!   ,                                       !- Design Specification Outdoor Air Object Name
+!   ;                                       !- Demand Controlled Ventilation Type
+
+SimulationControl,
+  No,                                     !- Do Zone Sizing Calculation
+  No,                                     !- Do System Sizing Calculation
+  No,                                     !- Do Plant Sizing Calculation
+  Yes,                                    !- Run Simulation for Sizing Periods
+  Yes,                                    !- Run Simulation for Weather File Run Periods
+  ,                                       !- Do HVAC Sizing Simulation for Sizing Periods
+  ;                                       !- Maximum Number of HVAC Sizing Simulation Passes
+
+HeatBalanceAlgorithm,
+  ConductionTransferFunction,             !- Algorithm
+  200;                                    !- Surface Temperature Upper Limit {C}
+
+RunPeriod,
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  2006,                                   !- Begin Year
+  12,                                     !- End Month
+  31,                                     !- End Day of Month
+  2006,                                   !- End Year
+  Sunday,                                 !- Day of Week for Start Day
+  No,                                     !- Use Weather File Holidays and Special Days
+  No,                                     !- Use Weather File Daylight Saving Period
+  No,                                     !- Apply Weekend Holiday Rule
+  Yes,                                    !- Use Weather File Rain Indicators
+  Yes;                                    !- Use Weather File Snow Indicators
+
+ShadowCalculation,
+  PolygonClipping,                        !- Shading Calculation Method
+  Periodic,                               !- Shading Calculation Update Frequency Method
+  20,                                     !- Shading Calculation Update Frequency
+  15000,                                  !- Maximum Figures in Shadow Overlap Calculations
+  SutherlandHodgman,                      !- Polygon Clipping Algorithm
+  512,                                    !- Pixel Counting Resolution
+  SimpleSkyDiffuseModeling,               !- Sky Diffuse Modeling Algorithm
+  No,                                     !- Output External Shading Calculation Results
+  No,                                     !- Disable Self-Shading Within Shading Zone Groups
+  No;                                     !- Disable Self-Shading From Shading Zone Groups to Other Zones
+
+Sizing:Parameters,
+  1.25,                                   !- Heating Sizing Factor
+  1.15;                                   !- Cooling Sizing Factor
+
+Output:Table:SummaryReports,
+  AllSummary;                             !- Report Name 1
+
+GlobalGeometryRules,
+  UpperLeftCorner,                        !- Starting Vertex Position
+  Counterclockwise,                       !- Vertex Entry Direction
+  Relative,                               !- Coordinate System
+  Relative,                               !- Daylighting Reference Point Coordinate System
+  Relative;                               !- Rectangular Surface Coordinate System
+
+
+
+Construction,
+  Door,                                   !- Name
+  F08 Metal surface,                      !- Layer 1
+  I01 25mm insulation board;              !- Layer 2
+
+Construction,
+  Exterior Wall,                          !- Name
+  Exterior Finish OSB,                    !- Layer 1
+  Rigid Insulation,                       !- Layer 2
+  OSB,                                    !- Layer 3
+  Stud Layer,                             !- Layer 4
+  Drywall;                                !- Layer 5
+
+Construction,
+  Floor,                                  !- Name
+  Roddent Barrier,                        !- Layer 1
+  Insulated Joist,                        !- Layer 2
+  OSB,                                    !- Layer 3
+  Plywood;                                !- Layer 4
+
+Construction,
+  Interior Wall,                          !- Name
+  G01a 19mm gypsum board,                 !- Layer 1
+  G01a 19mm gypsum board;                 !- Layer 2
+
+Construction,
+  Roof,                                   !- Name
+  EPDM Rubber,                            !- Layer 1
+  OSB,                                    !- Layer 2
+  Insulted Truss,                         !- Layer 3
+  Drywall;                                !- Layer 4
+
+Construction,
+  Window,                                 !- Name
+  Window Material Simple Glazing System 1; !- Layer 1
+
+ScheduleTypeLimits,
+  ActivityLevel,                          !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  activitylevel;                          !- Unit Type
+
+ScheduleTypeLimits,
+  Capacity,                               !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  capacity;                               !- Unit Type
+
+ScheduleTypeLimits,
+  Any Number;                             !- Name
+
+ScheduleTypeLimits,
+  DeltaTemperature,                       !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  deltatemperature;                       !- Unit Type
+
+ScheduleTypeLimits,
+  Dimensionless,                          !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous;                             !- Numeric Type
+
+ScheduleTypeLimits,
+  Dimensionless 1,                        !- Name
+  -1,                                     !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  Continuous;                             !- Numeric Type
+
+ScheduleTypeLimits,
+  Dimensionless 2,                        !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous;                             !- Numeric Type
+
+ScheduleTypeLimits,
+  Dimensionless 3,                        !- Name
+  0.1,                                    !- Lower Limit Value {BasedOnField A3}
+  1000,                                   !- Upper Limit Value {BasedOnField A3}
+  Continuous;                             !- Numeric Type
+
+ScheduleTypeLimits,
+  Dimensionless 4,                        !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  dimensionless;                          !- Unit Type
+
+ScheduleTypeLimits,
+  Fraction,                               !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  CONTINUOUS;                             !- Numeric Type
+
+ScheduleTypeLimits,
+  Fractional,                             !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  Continuous;                             !- Numeric Type
+
+ScheduleTypeLimits,
+  Integer,                                !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  4,                                      !- Upper Limit Value {BasedOnField A3}
+  Discrete;                               !- Numeric Type
+
+ScheduleTypeLimits,
+  OnOff,                                  !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  Discrete,                               !- Numeric Type
+  availability;                           !- Unit Type
+
+ScheduleTypeLimits,
+  Percent,                                !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  100,                                    !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  percent;                                !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature,                            !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 1,                          !- Name
+  ,                                       !- Lower Limit Value {BasedOnField A3}
+  0,                                      !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 2,                          !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature 3,                          !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  100,                                    !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+ScheduleTypeLimits,
+  Velocity,                               !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  ,                                       !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  velocity;                               !- Unit Type
+
+
+
+Schedule:Day:Interval,
+  Infil Quarter On Default Schedule,      !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  06:00,                                  !- Time 1 {hh:mm}
+  1,                                      !- Value Until Time 1
+  22:00,                                  !- Time 2 {hh:mm}
+  0.25,                                   !- Value Until Time 2
+  24:00,                                  !- Time 3 {hh:mm}
+  1;                                      !- Value Until Time 3
+
+Schedule:Day:Interval,
+  Infil Quarter On Rule 1 Day Schedule,   !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  1;                                      !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Infil Quarter On Rule 2 Day Schedule,   !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  06:00,                                  !- Time 1 {hh:mm}
+  1,                                      !- Value Until Time 1
+  18:00,                                  !- Time 2 {hh:mm}
+  0.25,                                   !- Value Until Time 2
+  24:00,                                  !- Time 3 {hh:mm}
+  1;                                      !- Value Until Time 3
+
+Schedule:Day:Interval,
+  Office Activity Summer Design Day,      !- Name
+  ActivityLevel,                          !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  132;                                    !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Office Activity Winter Design Day,      !- Name
+  ActivityLevel,                          !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  132;                                    !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Office Infil Quarter On Summer Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  06:00,                                  !- Time 1 {hh:mm}
+  1,                                      !- Value Until Time 1
+  22:00,                                  !- Time 2 {hh:mm}
+  0.25,                                   !- Value Until Time 2
+  24:00,                                  !- Time 3 {hh:mm}
+  1;                                      !- Value Until Time 3
+
+Schedule:Day:Interval,
+  Office Infil Quarter On Winter Design Day, !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  06:00,                                  !- Time 1 {hh:mm}
+  1,                                      !- Value Until Time 1
+  18:00,                                  !- Time 2 {hh:mm}
+  0.25,                                   !- Value Until Time 2
+  24:00,                                  !- Time 3 {hh:mm}
+  1;                                      !- Value Until Time 3
+
+
+Schedule:Day:Interval,
+  Small Office HtgSetp Summer Design Day 1, !- Name
+  Temperature 11,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  15.6;                                   !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Small Office HtgSetp Winter Design Day 1, !- Name
+  Temperature 11,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  21;                                     !- Value Until Time 1
+
+Schedule:Day:Interval,
+  Zone2 HtgSetp Default Schedule,         !- Name
+  Temperature 11,                         !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  23.3333333333334;                       !- Value Until Time 1
+
+Schedule:Week:Daily,
+  Infil Quarter On Week Rule - Jan1-Dec31, !- Name
+  Infil Quarter On Rule 1 Day Schedule,   !- Sunday Schedule:Day Name
+  Infil Quarter On Default Schedule,      !- Monday Schedule:Day Name
+  Infil Quarter On Default Schedule,      !- Tuesday Schedule:Day Name
+  Infil Quarter On Default Schedule,      !- Wednesday Schedule:Day Name
+  Infil Quarter On Default Schedule,      !- Thursday Schedule:Day Name
+  Infil Quarter On Default Schedule,      !- Friday Schedule:Day Name
+  Infil Quarter On Rule 2 Day Schedule,   !- Saturday Schedule:Day Name
+  Infil Quarter On Default Schedule,      !- Holiday Schedule:Day Name
+  Office Infil Quarter On Summer Design Day, !- SummerDesignDay Schedule:Day Name
+  Office Infil Quarter On Winter Design Day, !- WinterDesignDay Schedule:Day Name
+  Infil Quarter On Default Schedule,      !- CustomDay1 Schedule:Day Name
+  Infil Quarter On Default Schedule;      !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  Infil Quarter On,                       !- Name
+  Fraction,                               !- Schedule Type Limits Name
+  Infil Quarter On Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  People Activity Week Rule - Jan1-Dec31, !- Name
+  Activity Default Schedule,              !- Sunday Schedule:Day Name
+  Activity Default Schedule,              !- Monday Schedule:Day Name
+  Activity Default Schedule,              !- Tuesday Schedule:Day Name
+  Activity Default Schedule,              !- Wednesday Schedule:Day Name
+  Activity Default Schedule,              !- Thursday Schedule:Day Name
+  Activity Default Schedule,              !- Friday Schedule:Day Name
+  Activity Default Schedule,              !- Saturday Schedule:Day Name
+  Activity Default Schedule,              !- Holiday Schedule:Day Name
+  Office Activity Summer Design Day,      !- SummerDesignDay Schedule:Day Name
+  Office Activity Winter Design Day,      !- WinterDesignDay Schedule:Day Name
+  Activity Default Schedule,              !- CustomDay1 Schedule:Day Name
+  Activity Default Schedule;              !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  People Activity,                        !- Name
+  ActivityLevel,                          !- Schedule Type Limits Name
+  People Activity Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  Schedule Ruleset Week Rule - Jan1-Dec31, !- Name
+  Schedule Saturday-Sunday,               !- Sunday Schedule:Day Name
+  Schedule Monday-Thursday,               !- Monday Schedule:Day Name
+  Schedule Monday-Thursday,               !- Tuesday Schedule:Day Name
+  Schedule Monday-Thursday,               !- Wednesday Schedule:Day Name
+  Schedule Monday-Thursday,               !- Thursday Schedule:Day Name
+  Schedule Friday,                        !- Friday Schedule:Day Name
+  Schedule Saturday-Sunday,               !- Saturday Schedule:Day Name
+  Schedule Monday-Thursday,               !- Holiday Schedule:Day Name
+  Schedule Monday-Thursday,               !- SummerDesignDay Schedule:Day Name
+  Schedule Monday-Thursday,               !- WinterDesignDay Schedule:Day Name
+  Schedule Monday-Thursday,               !- CustomDay1 Schedule:Day Name
+  Schedule Monday-Thursday;               !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  Schedule Ruleset,                       !- Name
+  Fractional,                             !- Schedule Type Limits Name
+  Schedule Ruleset Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Week:Daily,
+  Zone 2 HtgSetp Week Rule - Jan1-Dec31,  !- Name
+  Zone2 HtgSetp Default Schedule,         !- Sunday Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- Monday Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- Tuesday Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- Wednesday Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- Thursday Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- Friday Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- Saturday Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- Holiday Schedule:Day Name
+  Small Office HtgSetp Summer Design Day 1, !- SummerDesignDay Schedule:Day Name
+  Small Office HtgSetp Winter Design Day 1, !- WinterDesignDay Schedule:Day Name
+  Zone2 HtgSetp Default Schedule,         !- CustomDay1 Schedule:Day Name
+  Zone2 HtgSetp Default Schedule;         !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  Zone 2 HtgSetp,                         !- Name
+  Temperature 11,                         !- Schedule Type Limits Name
+  Zone 2 HtgSetp Week Rule - Jan1-Dec31,  !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Constant,
+  Always On Discrete,                     !- Name
+  ,                                       !- Schedule Type Limits Name
+  1;                                      !- Hourly Value
+
+Schedule:Constant,
+  Always Off Discrete,                    !- Name
+  ,                                       !- Schedule Type Limits Name
+  0;                                      !- Hourly Value
+
+Schedule:Constant,
+  Always On Continuous,                   !- Name
+  ,                                       !- Schedule Type Limits Name
+  1;                                      !- Hourly Value
+
+OutdoorAir:Node,
+  Model Outdoor Air Node;                 !- Name
+
+Site:Location,
+  Denver Centennial  Golden   Nr,         !- Name
+  39.74,                                  !- Latitude {deg}
+  39.74,                                  !- Longitude {deg}
+  -7,                                     !- Time Zone {hr}
+  1829;                                   !- Elevation {m}
+
+ZoneList,
+  Space Type 1,                           !- Name
+  Thermal Zone 1;                         !- Zone Name 1
+
+
+
+OutputControl:Table:Style,
+  HTML;                                   !- Column Separator
+
+Output:VariableDictionary,
+  IDF,                                    !- Key Field
+  Unsorted;                               !- Sort Option
+
+Output:SQLite,
+  SimpleAndTabular;                       !- Option Type
+
+LifeCycleCost:NonrecurringCost,
+  Default Cost,                           !- Name
+  Construction,                           !- Category
+  0,                                      !- Cost
+  ServicePeriod;                          !- Start of Costs
+
+Output:Variable,
+  ,                                       !- Key Value
+  Site Outdoor Air Drybulb Temperature,   !- Variable Name
+  monthly;                                !- Reporting Frequency
+
+Output:Variable,
+  ,                                       !- Key Value
+  Zone Air Temperature,                   !- Variable Name
+  hourly;                                 !- Reporting Frequency
+
+Output:Variable,
+  ,                                       !- Key Value
+  Zone Air Relative Humidity,             !- Variable Name
+  hourly;                                 !- Reporting Frequency
+
+Output:Table:Monthly,
+  Building Energy Performance - FuelOilNo1, !- Name
+  2,                                      !- Digits After Decimal
+  Heating:FuelOilNo1,                     !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:FuelOilNo1,                     !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:FuelOilNo1,           !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:FuelOilNo1,           !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:FuelOilNo1,          !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:FuelOilNo1,          !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:FuelOilNo1,                        !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:FuelOilNo1,                       !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:FuelOilNo1,              !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:FuelOilNo1,              !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:FuelOilNo1,               !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:FuelOilNo1,               !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:FuelOilNo1,               !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:FuelOilNo1,                  !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - FuelOilNo2, !- Name
+  2,                                      !- Digits After Decimal
+  Heating:FuelOilNo2,                     !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:FuelOilNo2,                     !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:FuelOilNo2,           !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:FuelOilNo2,           !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:FuelOilNo2,          !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:FuelOilNo2,          !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:FuelOilNo2,                        !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:FuelOilNo2,                       !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:FuelOilNo2,              !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:FuelOilNo2,              !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:FuelOilNo2,               !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:FuelOilNo2,               !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:FuelOilNo2,               !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:FuelOilNo2,                  !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - PropaneGas, !- Name
+  2,                                      !- Digits After Decimal
+  Heating:PropaneGas,                     !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:PropaneGas,                     !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:PropaneGas,           !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:PropaneGas,           !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:PropaneGas,          !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:PropaneGas,          !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:PropaneGas,                        !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:PropaneGas,                       !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:PropaneGas,              !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:PropaneGas,              !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:PropaneGas,               !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:PropaneGas,               !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:PropaneGas,               !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:PropaneGas,                  !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - Coal,     !- Name
+  2,                                      !- Digits After Decimal
+  Heating:Coal,                           !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:Coal,                           !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:Coal,                 !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:Coal,                 !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:Coal,                !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:Coal,                !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:Coal,                              !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:Coal,                             !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:Coal,                    !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:Coal,                    !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:Coal,                     !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:Coal,                     !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:Coal,                     !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:Coal,                        !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - Diesel,   !- Name
+  2,                                      !- Digits After Decimal
+  Heating:Diesel,                         !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:Diesel,                         !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:Diesel,               !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:Diesel,               !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:Diesel,              !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:Diesel,              !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:Diesel,                            !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:Diesel,                           !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:Diesel,                  !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:Diesel,                  !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:Diesel,                   !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:Diesel,                   !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:Diesel,                   !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:Diesel,                      !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - Gasoline, !- Name
+  2,                                      !- Digits After Decimal
+  Heating:Gasoline,                       !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:Gasoline,                       !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:Gasoline,             !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:Gasoline,             !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:Gasoline,            !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:Gasoline,            !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:Gasoline,                          !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:Gasoline,                         !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:Gasoline,                !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:Gasoline,                !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:Gasoline,                 !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:Gasoline,                 !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:Gasoline,                 !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:Gasoline,                    !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - OtherFuel1, !- Name
+  2,                                      !- Digits After Decimal
+  Heating:OtherFuel1,                     !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:OtherFuel1,                     !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:OtherFuel1,           !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:OtherFuel1,           !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:OtherFuel1,          !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:OtherFuel1,          !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:OtherFuel1,                        !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:OtherFuel1,                       !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:OtherFuel1,              !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:OtherFuel1,              !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:OtherFuel1,               !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:OtherFuel1,               !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:OtherFuel1,               !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:OtherFuel1,                  !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - OtherFuel2, !- Name
+  2,                                      !- Digits After Decimal
+  Heating:OtherFuel2,                     !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  Cooling:OtherFuel2,                     !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Interior Lighting:OtherFuel2,           !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Exterior Lighting:OtherFuel2,           !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Interior Equipment:OtherFuel2,          !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Exterior Equipment:OtherFuel2,          !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Fans:OtherFuel2,                        !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Pumps:OtherFuel2,                       !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  Heat Rejection:OtherFuel2,              !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidification:OtherFuel2,              !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  Heat Recovery:OtherFuel2,               !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  Water Systems:OtherFuel2,               !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Refrigeration:OtherFuel2,               !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Generators:OtherFuel2,                  !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - Electricity, !- Name
+  2,                                      !- Digits After Decimal
+  InteriorLights:Electricity,             !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  ExteriorLights:Electricity,             !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  InteriorEquipment:Electricity,          !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  ExteriorEquipment:Electricity,          !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Fans:Electricity,                       !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Pumps:Electricity,                      !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Heating:Electricity,                    !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Cooling:Electricity,                    !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  HeatRejection:Electricity,              !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidifier:Electricity,                 !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  HeatRecovery:Electricity,               !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  WaterSystems:Electricity,               !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Cogeneration:Electricity,               !- Variable or Meter Name 13
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 13
+  Refrigeration:Electricity,              !- Variable or Meter Name 14
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - Natural Gas, !- Name
+  2,                                      !- Digits After Decimal
+  InteriorEquipment:NaturalGas,           !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  ExteriorEquipment:NaturalGas,           !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  Heating:NaturalGas,                     !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  Cooling:NaturalGas,                     !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  WaterSystems:NaturalGas,                !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Cogeneration:NaturalGas,                !- Variable or Meter Name 6
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 6
+
+Output:Table:Monthly,
+  Building Energy Performance - District Heating, !- Name
+  2,                                      !- Digits After Decimal
+  InteriorLights:DistrictHeating,         !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  ExteriorLights:DistrictHeating,         !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  InteriorEquipment:DistrictHeating,      !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  ExteriorEquipment:DistrictHeating,      !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Fans:DistrictHeating,                   !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Pumps:DistrictHeating,                  !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Heating:DistrictHeating,                !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Cooling:DistrictHeating,                !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  HeatRejection:DistrictHeating,          !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidifier:DistrictHeating,             !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  HeatRecovery:DistrictHeating,           !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  WaterSystems:DistrictHeating,           !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Cogeneration:DistrictHeating,           !- Variable or Meter Name 13
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 13
+
+Output:Table:Monthly,
+  Building Energy Performance - District Cooling, !- Name
+  2,                                      !- Digits After Decimal
+  InteriorLights:DistrictCooling,         !- Variable or Meter Name 1
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 1
+  ExteriorLights:DistrictCooling,         !- Variable or Meter Name 2
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 2
+  InteriorEquipment:DistrictCooling,      !- Variable or Meter Name 3
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 3
+  ExteriorEquipment:DistrictCooling,      !- Variable or Meter Name 4
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 4
+  Fans:DistrictCooling,                   !- Variable or Meter Name 5
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 5
+  Pumps:DistrictCooling,                  !- Variable or Meter Name 6
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 6
+  Heating:DistrictCooling,                !- Variable or Meter Name 7
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 7
+  Cooling:DistrictCooling,                !- Variable or Meter Name 8
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 8
+  HeatRejection:DistrictCooling,          !- Variable or Meter Name 9
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 9
+  Humidifier:DistrictCooling,             !- Variable or Meter Name 10
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 10
+  HeatRecovery:DistrictCooling,           !- Variable or Meter Name 11
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 11
+  WaterSystems:DistrictCooling,           !- Variable or Meter Name 12
+  SumOrAverage,                           !- Aggregation Type for Variable or Meter 12
+  Cogeneration:DistrictCooling,           !- Variable or Meter Name 13
+  SumOrAverage;                           !- Aggregation Type for Variable or Meter 13
+
+Output:Table:Monthly,
+  Building Energy Performance - Electricity Peak Demand, !- Name
+  2,                                      !- Digits After Decimal
+  Electricity:Facility,                   !- Variable or Meter Name 1
+  Maximum,                                !- Aggregation Type for Variable or Meter 1
+  InteriorLights:Electricity,             !- Variable or Meter Name 2
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 2
+  ExteriorLights:Electricity,             !- Variable or Meter Name 3
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 3
+  InteriorEquipment:Electricity,          !- Variable or Meter Name 4
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 4
+  ExteriorEquipment:Electricity,          !- Variable or Meter Name 5
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 5
+  Fans:Electricity,                       !- Variable or Meter Name 6
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 6
+  Pumps:Electricity,                      !- Variable or Meter Name 7
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 7
+  Heating:Electricity,                    !- Variable or Meter Name 8
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 8
+  Cooling:Electricity,                    !- Variable or Meter Name 9
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 9
+  HeatRejection:Electricity,              !- Variable or Meter Name 10
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 10
+  Humidifier:Electricity,                 !- Variable or Meter Name 11
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 11
+  HeatRecovery:Electricity,               !- Variable or Meter Name 12
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 12
+  WaterSystems:Electricity,               !- Variable or Meter Name 13
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 13
+  Cogeneration:Electricity,               !- Variable or Meter Name 14
+  ValueWhenMaximumOrMinimum;              !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - Natural Gas Peak Demand, !- Name
+  2,                                      !- Digits After Decimal
+  NaturalGas:Facility,                    !- Variable or Meter Name 1
+  Maximum,                                !- Aggregation Type for Variable or Meter 1
+  InteriorEquipment:NaturalGas,           !- Variable or Meter Name 2
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 2
+  ExteriorEquipment:NaturalGas,           !- Variable or Meter Name 3
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 3
+  Heating:NaturalGas,                     !- Variable or Meter Name 4
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 4
+  Cooling:NaturalGas,                     !- Variable or Meter Name 5
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 5
+  WaterSystems:NaturalGas,                !- Variable or Meter Name 6
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 6
+  Cogeneration:NaturalGas,                !- Variable or Meter Name 7
+  ValueWhenMaximumOrMinimum;              !- Aggregation Type for Variable or Meter 7
+
+Output:Table:Monthly,
+  Building Energy Performance - District Heating Peak Demand, !- Name
+  2,                                      !- Digits After Decimal
+  DistrictHeating:Facility,               !- Variable or Meter Name 1
+  Maximum,                                !- Aggregation Type for Variable or Meter 1
+  InteriorLights:DistrictHeating,         !- Variable or Meter Name 2
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 2
+  ExteriorLights:DistrictHeating,         !- Variable or Meter Name 3
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 3
+  InteriorEquipment:DistrictHeating,      !- Variable or Meter Name 4
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 4
+  ExteriorEquipment:DistrictHeating,      !- Variable or Meter Name 5
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 5
+  Fans:DistrictHeating,                   !- Variable or Meter Name 6
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 6
+  Pumps:DistrictHeating,                  !- Variable or Meter Name 7
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 7
+  Heating:DistrictHeating,                !- Variable or Meter Name 8
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 8
+  Cooling:DistrictHeating,                !- Variable or Meter Name 9
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 9
+  HeatRejection:DistrictHeating,          !- Variable or Meter Name 10
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 10
+  Humidifier:DistrictHeating,             !- Variable or Meter Name 11
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 11
+  HeatRecovery:DistrictHeating,           !- Variable or Meter Name 12
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 12
+  WaterSystems:DistrictHeating,           !- Variable or Meter Name 13
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 13
+  Cogeneration:DistrictHeating,           !- Variable or Meter Name 14
+  ValueWhenMaximumOrMinimum;              !- Aggregation Type for Variable or Meter 14
+
+Output:Table:Monthly,
+  Building Energy Performance - District Cooling Peak Demand, !- Name
+  2,                                      !- Digits After Decimal
+  DistrictCooling:Facility,               !- Variable or Meter Name 1
+  Maximum,                                !- Aggregation Type for Variable or Meter 1
+  InteriorLights:DistrictCooling,         !- Variable or Meter Name 2
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 2
+  ExteriorLights:DistrictCooling,         !- Variable or Meter Name 3
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 3
+  InteriorEquipment:DistrictCooling,      !- Variable or Meter Name 4
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 4
+  ExteriorEquipment:DistrictCooling,      !- Variable or Meter Name 5
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 5
+  Fans:DistrictCooling,                   !- Variable or Meter Name 6
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 6
+  Pumps:DistrictCooling,                  !- Variable or Meter Name 7
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 7
+  Heating:DistrictCooling,                !- Variable or Meter Name 8
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 8
+  Cooling:DistrictCooling,                !- Variable or Meter Name 9
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 9
+  HeatRejection:DistrictCooling,          !- Variable or Meter Name 10
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 10
+  Humidifier:DistrictCooling,             !- Variable or Meter Name 11
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 11
+  HeatRecovery:DistrictCooling,           !- Variable or Meter Name 12
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 12
+  WaterSystems:DistrictCooling,           !- Variable or Meter Name 13
+  ValueWhenMaximumOrMinimum,              !- Aggregation Type for Variable or Meter 13
+  Cogeneration:DistrictCooling,           !- Variable or Meter Name 14
+  ValueWhenMaximumOrMinimum;              !- Aggregation Type for Variable or Meter 14
+
+Output:Meter:MeterFileOnly,
+  NaturalGas:Facility,                    !- Key Name
+  Daily;                                  !- Reporting Frequency
+
+Output:Meter:MeterFileOnly,
+  Electricity:Facility,                   !- Key Name
+  Timestep;                               !- Reporting Frequency
+
+Output:Meter:MeterFileOnly,
+  Electricity:Facility,                   !- Key Name
+  Daily;                                  !- Reporting Frequency
+
+Output:Meter,
+  Electricity:Facility,                   !- Key Name
+  Timestep;                               !- Reporting Frequency
+
+Output:Meter,
+  NaturalGas:Facility,                    !- Key Name
+  Timestep;                               !- Reporting Frequency
+
+Output:Meter,
+  DistrictCooling:Facility,               !- Key Name
+  Timestep;                               !- Reporting Frequency
+
+Output:Meter,
+  DistrictHeating:Facility,               !- Key Name
+  Timestep;                               !- Reporting Frequency
+! 
+! -------------------------------------------------------------
+! New objects created from ExpandObjects
+! -------------------------------------------------------------
+! 
+
+ZoneHVAC:EquipmentConnections,
+  Thermal Zone 1,                                          !- Zone Name
+  Thermal Zone 1 Equipment,                                !- Zone Conditioning Equipment List Name
+  Thermal Zone 1 Ideal Loads Supply Inlet,                 !- Zone Air Inlet Node or NodeList Name
+  ,                                                        !- Zone Air Exhaust Node or NodeList Name
+  Thermal Zone 1 Zone Air Node,                            !- Zone Air Node Name
+  Thermal Zone 1 Return Outlet;                            !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentList,
+  Thermal Zone 1 Equipment,                                !- Name
+  SequentialLoad,                                          !- Load Distribution Scheme
+  ZoneHVAC:IdealLoadsAirSystem,                            !- Zone Equipment Object Type
+  Thermal Zone 1 Ideal Loads Air System,                   !- Zone Equipment Name
+  1,                                                       !- Zone Equipment Cooling Sequence
+  1,                                                       !- Zone Equipment Heating or No-Load Sequence
+  ,                                                        !- Zone Equipment Sequential Cooling Fraction Schedule Name
+  ;                                                        !- Zone Equipment Sequential Heating Fraction Schedule Name
+
+ZoneHVAC:IdealLoadsAirSystem,
+  Thermal Zone 1 Ideal Loads Air System,                   !- Name
+  ,                                                        !- Availability Schedule Name
+  Thermal Zone 1 Ideal Loads Supply Inlet,                 !- Zone Supply Air Node Name
+  ,                                                        !- Zone Exhaust Air Node Name
+  ,                                                        !- System Inlet Air Node Name
+  50,                                                      !- Maximum Heating Supply Air Temperature [C]
+  13,                                                      !- Minimum Cooling Supply Air Temperature [C]
+  0.0156,                                                  !- Maximum Heating Supply Air Humidity Ratio [kg-H20/kg-air]
+  0.0077,                                                  !- Minimum Cooling Supply Air Humidity Ratio [kg-H20/kg-air]
+  NoLimit,                                                 !- Heating Limit
+  ,                                                        !- Maximum Heating Air Flow Rate {m3/s}
+  ,                                                        !- Maximum Sensible Heating Capacity {m3/s}
+  NoLimit,                                                 !- Cooling Limit
+  ,                                                        !- Maximum Cooling Air Flow Rate {m3/s}
+  ,                                                        !- Maximum Total Cooling Capacity {m3/s}
+  ,                                                        !- Heating Availability Schedule Name
+  ,                                                        !- Cooling Availability Schedule Name
+  ConstantSensibleHeatRatio,                               !- Dehumidification Control Type
+  0.7,                                                     !- Cooling Sensible Heat Ratio
+  None,                                                    !- Humidification Control Type
+  ,                                                        !- Design Specification Outdoor Air Object Name
+  ,                                                        !- Outdoor Air Inlet Node Name
+  None,                                                    !- Demand Controlled Ventilation Type
+  NoEconomizer,                                            !- Outdoor Air Economizer Type
+  None,                                                    !- Heat Recovery Type
+  0.7,                                                     !- Sensible Heat Recovery Effectiveness
+  0.65;                                                    !- Latent Heat Recovery Effectiveness
