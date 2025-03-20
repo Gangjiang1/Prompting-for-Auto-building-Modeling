@@ -6,7 +6,7 @@
 ![Illustration of Prompting for Auto-building modeling](/figs/graphic.jpg)
 
 
-Paper is [HERE](https://doi.org/10.1016/j.energy.2025.134548)
+**Paper is [HERE](https://doi.org/10.1016/j.energy.2025.134548)**
 
 
 # Introduction
