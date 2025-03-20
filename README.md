@@ -2,6 +2,8 @@
 
 Gang Jiang, Zhihao Ma, Liang Zhang, Jianli Chen
 
+![Illustration of Prompting for Auto-building modeling](/figs/graphic.png){: .align-center width="600px"}
+
 Paper is [HERE](https://doi.org/10.1016/j.energy.2025.134548)
 
 # Introduction
