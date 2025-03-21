@@ -1,4 +1,4 @@
-## 📄 Prompt Engineering to Inform Large Language Model in Automated Building Energy Modeling
+# 📄 Prompt Engineering to Inform Large Language Model in Automated Building Energy Modeling
 
 **Gang Jiang**, **Zhihao Ma**, **Liang Zhang**, **Jianli Chen**
 
