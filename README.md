@@ -68,7 +68,7 @@ This repository includes designed prompts, case studies, and implementation deta
 To evaluate ABEM performance using GPT-4o, run:
 `python GPT4o_Test.py`
 
-### 📝 Citation
+## 📝 Citation
 
 If you find this work useful, please cite our paper:
 ```
