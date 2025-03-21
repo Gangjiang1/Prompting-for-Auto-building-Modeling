@@ -26,25 +26,30 @@ Prompt Engineering for ABEM: Six types of prompts were designed to explore 18 op
 This repository includes designed prompts, case studies, and implementation details for leveraging LLMs in ABEM.
 
 📂 Repository Structure
+
 ```
-── README.md                       # Project documentation
-── figs/                          # Figures and visualizations
-── GPT4o_Test.py                  # Script for testing ABEM performance using GPT-4o
-── Task1.py                        # Script for Exploratory Task 1 (Basic IDF model generation)
-── Task1_test_dataset_example.json  # Example dataset for Task 1
-── Task2.py                        # Script for Exploratory Task 2 (More complex IDF model)
-── Task2_test_dataset_example.json  # Example dataset for Task 2
-── Task3_real-world.py             # Script for Real-world Task 3 (Detailed IDF model)
-── Task3_real-world_rest-part.idf   # IDF file for real-world task`
+    ── README.md                       # Project documentation
+    ── figs/                          # Figures and visualizations
+    ── GPT4o_Test.py                  # Script for testing ABEM performance using GPT-4o
+    ── Task1.py                        # Script for Exploratory Task 1 (Basic IDF model generation)
+    ── Task1_test_dataset_example.json  # Example dataset for Task 1
+    ── Task2.py                        # Script for Exploratory Task 2 (More complex IDF model)
+    ── Task2_test_dataset_example.json  # Example dataset for Task 2
+    ── Task3_real-world.py             # Script for Real-world Task 3 (Detailed IDF model)
+    ── Task3_real-world_rest-part.idf   # IDF file for real-world task`
 ```
 
 ### 🔧 Installation
-1. Clone the repository:
-    `git clone https://github.com/your-repo-name.git`
-    `cd your-repo-name`
 
-2. Install required dependencies:
-    `pip install -r requirements.txt`
+- Clone the repository:
+```
+    git clone https://github.com/Gangjiang1/Prompting-for-Auto-building-Modeling.git
+    cd Prompting-for-Auto-building-Modeling
+```
+- Install required dependencies:
+```
+    pip install -r requirements.txt
+```
 
 ### ▶️ Running the Tasks
 - Exploratory Task 1: Run the basic IDF model generation script
@@ -55,11 +60,12 @@ This repository includes designed prompts, case studies, and implementation deta
 `python Task3_real-world.py`
 
 ### 📊 Testing with GPT-4o
+
 To evaluate ABEM performance using GPT-4o, run:
 `python GPT4o_Test.py`
-# Requirement
 
 # Citation
+
 If you find this work useful, please cite our paper:
 
 @article{jiang2025prompt,
