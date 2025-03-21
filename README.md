@@ -71,7 +71,7 @@ To evaluate ABEM performance using GPT-4o, run:
 ### 📝 Citation
 
 If you find this work useful, please cite our paper:
-
+```
 @article{jiang2025prompt,
   author    = {Gang Jiang and Zhihao Ma and Liang Zhang and Jianli Chen},
   title     = {Prompt engineering to inform large language models in automated building energy modeling},
@@ -82,4 +82,4 @@ If you find this work useful, please cite our paper:
   month     = {Feb},
   doi       = {https://doi.org/10.1016/j.energy.2025.134548}
 }
-
+```
