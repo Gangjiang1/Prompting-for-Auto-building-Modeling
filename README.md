@@ -28,7 +28,7 @@ Prompt Engineering for ABEM: Six types of prompts were designed to explore 18 op
 
 This repository includes designed prompts, case studies, and implementation details for prompting LLMs in ABEM.
 
-📂 Repository Structure
+## 📂 Repository Structure
 
 ```
     ── README.md                       # Project documentation
@@ -67,7 +67,7 @@ This repository includes designed prompts, case studies, and implementation deta
 To evaluate ABEM performance using GPT-4o, run:
 `python GPT4o_Test.py`
 
-# Citation
+### 📝 Citation
 
 If you find this work useful, please cite our paper:
 
