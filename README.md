@@ -11,7 +11,7 @@ This repository provides guidelines for applying Large Language Models (LLMs) to
 
 
 ## 🖇 Key Contributions
-Prompt Engineering for ABEM: Six types of prompts were designed to explore LLM capabilities across 648 case studies.
+Prompt Engineering for ABEM: Six types of prompts were designed to explore 18 open-source LLM capabilities across 648 case studies.
 - Exploratory Tasks:
 Task 1: Generates a simple building model with basic geometry in IDF format (~1k tokens).
 Task 2: Creates a more complex model with multiple windows, internal loads, and varying WWRs (~2k tokens).
