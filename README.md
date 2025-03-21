@@ -12,11 +12,9 @@ This repository provides guidelines for applying Large Language Models (LLMs) to
 
 ## 🖇 Key Contributions
 Prompt Engineering for ABEM: Six types of prompts were designed to explore 18 open-source LLM capabilities across 648 case studies.
-- Exploratory Tasks:
-Task 1: Generates a simple building model with basic geometry in IDF format (~1k tokens).
-Task 2: Creates a more complex model with multiple windows, internal loads, and varying WWRs (~2k tokens).
-- Real-World Task:
-Task 3: Produces a detailed model for a real-world modular test facility (iUnit) at NREL, supporting customizable materials, occupancy schedules, HVAC, and energy settings (~5k tokens).
+- Exploratory Task 1: Generates a simple building model with basic geometry in IDF format (~1k tokens).
+- Exploratory Task 2: Creates a more complex model with multiple windows, internal loads, and varying WWRs (~2k tokens).
+- Real-World Task 3: Produces a detailed model for a real-world modular test facility (iUnit) at National Renewable Energy Laboratory (NREL), including customizable materials, occupancy schedules, and energy settings (~5k tokens).
 
 ## 📍 Findings
 - Few-shot and chain-of-thought prompting strategies improve ABEM generation.
@@ -26,9 +24,6 @@ Task 3: Produces a detailed model for a real-world modular test facility (iUnit)
 
 ## 🚀 Quick Start
 This repository includes designed prompts, case studies, and implementation details for leveraging LLMs in ABEM.
-
-
-
 
 📂 Repository Structure
 ├── figs/                          # Figures and visualizations
