@@ -2,7 +2,7 @@
 
 **Gang Jiang**, **Zhihao Ma**, **Liang Zhang**, **Jianli Chen**
 
-This repository provides guidelines for applying Large Language Models (LLMs) to facilitate Auto-Building Energy Modeling (ABEM) through prompt engineering. Unlike fine-tuning, which requires adjusting model weights, prompt engineering enables LLMs to generate Building Energy Models (BEMs) using natural language inputs. This approach allows users without specialized knowledge to create BEMs efficiently.
+This repository provides guidelines for applying Large Language Models (LLMs) to facilitate Auto-Building Energy Modeling (ABEM) through prompt engineering. Unlike fine-tuning, which requires adjusting model weights, prompt engineering enables LLMs to generate Building Energy Models (BEMs) using natural language inputs. This approach allows users without specialized knowledge to create BEMs efficiently using natural language.
 
 ![Illustration of Prompting for Auto-building modeling](/figs/graphic.jpg)
 
