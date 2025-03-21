@@ -32,14 +32,15 @@ This repository includes designed prompts, case studies, and implementation deta
 📂 Repository Structure
 
 ```
-    ── README.md                       # Project documentation
-    ── Task1.py                        # Script for Exploratory Task 1 (Basic IDF model generation)
-    ── Task1_test_dataset_example.json  # Example dataset for Task 1
-    ── Task2.py                        # Script for Exploratory Task 2 (More complex IDF model)
-    ── Task2_test_dataset_example.json  # Example dataset for Task 2
-    ── Task3_real-world.py             # Script for Real-world Task 3 (Detailed IDF model)
-    ── Task3_real-world_rest-part.idf   # IDF file for real-world task
-    ── GPT4o_Test.py                  # Script for testing ABEM performance using GPT-4o
+    ── README.md                           # Project documentation
+    ── Task1.py                            # Script for Exploratory Task 1 (Basic IDF model generation)
+    ── Task1_test_dataset_example.json     # Example dataset for Task 1
+    ── Task2.py                            # Script for Exploratory Task 2 (More complex IDF model)
+    ── Task2_test_dataset_example.json     # Example dataset for Task 2
+    ── Task3_real-world.py                 # Script for Real-world Task 3 (Detailed IDF model)
+    ── Task3_real-world_rest-part.idf      # IDF file for real-world task
+    ── GPT4o_Test.py                       # Script for testing ABEM performance using GPT-4o
+    ── requirements.txt                    # Dependencies for this project
 ```
 
 🔧 Installation
