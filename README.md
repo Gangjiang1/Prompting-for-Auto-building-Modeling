@@ -28,21 +28,21 @@ Prompt Engineering for ABEM: Six types of prompts were designed to explore 18 op
 
 This repository includes designed prompts, case studies, and implementation details for prompting LLMs in ABEM.
 
-## 📂 Repository Structure
+
+📂 Repository Structure
 
 ```
     ── README.md                       # Project documentation
-    ── figs/                          # Figures and visualizations
-    ── GPT4o_Test.py                  # Script for testing ABEM performance using GPT-4o
     ── Task1.py                        # Script for Exploratory Task 1 (Basic IDF model generation)
     ── Task1_test_dataset_example.json  # Example dataset for Task 1
     ── Task2.py                        # Script for Exploratory Task 2 (More complex IDF model)
     ── Task2_test_dataset_example.json  # Example dataset for Task 2
     ── Task3_real-world.py             # Script for Real-world Task 3 (Detailed IDF model)
-    ── Task3_real-world_rest-part.idf   # IDF file for real-world task`
+    ── Task3_real-world_rest-part.idf   # IDF file for real-world task
+    ── GPT4o_Test.py                  # Script for testing ABEM performance using GPT-4o
 ```
 
-### 🔧 Installation
+🔧 Installation
 
 - Clone the repository:
 ```
@@ -54,7 +54,7 @@ This repository includes designed prompts, case studies, and implementation deta
     pip install -r requirements.txt
 ```
 
-### ▶️ Running the Tasks
+▶️ Running the Tasks
 - Exploratory Task 1: Run the basic IDF model generation script
 `python Task1.py`
 - Exploratory Task 2: Generate a more complex IDF model with multiple windows and internal loads:
@@ -62,7 +62,7 @@ This repository includes designed prompts, case studies, and implementation deta
 - Real-world Task 3: Generate a real-world building model in IDF format:
 `python Task3_real-world.py`
 
-### 📊 Testing with GPT-4o
+📊 Testing with GPT-4o
 
 To evaluate ABEM performance using GPT-4o, run:
 `python GPT4o_Test.py`
